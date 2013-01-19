@@ -7,6 +7,8 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.Timer;
+import java.util.TimerTask;
 
 import javazoom.jl.decoder.Bitstream;
 import javazoom.jl.decoder.BitstreamException;
@@ -26,6 +28,8 @@ import android.media.MediaPlayer.OnPreparedListener;
 import android.media.SoundPool;
 import android.media.SoundPool.OnLoadCompleteListener;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -69,18 +73,52 @@ public class PlayerActivity extends Activity {
 			mAudioTrack = new AudioTrack(AudioManager.STREAM_MUSIC, 44100, AudioFormat.CHANNEL_OUT_STEREO, AudioFormat.ENCODING_PCM_16BIT, min, AudioTrack.MODE_STREAM);
 			mAudioTrack2 = new AudioTrack(AudioManager.STREAM_MUSIC, 44100, AudioFormat.CHANNEL_OUT_STEREO, AudioFormat.ENCODING_PCM_16BIT, min2, AudioTrack.MODE_STREAM);
 			
+			
+			
+			
+			//Log.v("INFO","Current volume is: "+currentVolume);
+			
 			new Thread(new Runnable() {
 			    public void run() {
+			    	Looper.prepare();
+						    
+			    	float currentVolume = 1.0f;
+			    	
 			    	mAudioTrack.play();
-					mAudioTrack.write(buffer, 0, buffer.length);	
+					
+			    	// Next instruction has to be in a loop
+			    	//mAudioTrack.write(buffer, 0, buffer.length);
+			    	
+			    	Log.v("TEST","Buffer len: "+buffer.length);
+			    	Log.v("INFO","Max vol: "+mAudioTrack.getMaxVolume());
+			    	Log.v("INFO","Min vol: "+mAudioTrack.getMinVolume());
+			    	
+			    	for(int i = 0; i < buffer.length; i=i+50) {
+			    		mAudioTrack.write(buffer, i, 50);
+			    		if(i > 50 && currentVolume > 0) { // Length of this particular song divided in half
+			    			currentVolume -= 0.00005f;
+			    			mAudioTrack.setStereoVolume(currentVolume, currentVolume);
+			    			Log.v("INFO","Set vol to: "+currentVolume);
+			    		}
+			    		//Log.v("INFO","Playing!");
+			    		
+			    	}
+			    	
+					Log.v("TEST","This is a test thread 1!");
+
 			    }
 			  }).start();
-			
 			
 			new Thread(new Runnable() {
 			    public void run() {
 					mAudioTrack2.play();
-			    	mAudioTrack2.write(buffer2, 0, buffer2.length);
+					
+					for(int i = 0; i < buffer2.length; i=i+50) {
+			    		mAudioTrack2.write(buffer2, i, 50);
+			    	}
+					
+					Log.v("TEST","This is a test thread 2!");
+					
 			    }
 			  }).start();
 			
@@ -170,6 +208,22 @@ public class PlayerActivity extends Activity {
 		}
 		
 		return null;
+		
+	}
+	
+}
+
+class UpdateVolumeTask extends TimerTask {
+	
+	AudioTrack track;
+	
+	public void setTrack(AudioTrack tr) {
+		this.track = tr;
+	}
+	
+	public void run() {
+		
+		track.setStereoVolume(0, 0);
 		
 	}
 	
