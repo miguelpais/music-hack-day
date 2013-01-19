@@ -28,8 +28,9 @@ public class MainActivity extends Activity {
         
         File[] trackFiles = new File("/sdcard/mixer").listFiles();
         
-    	String toPlay = "";
-        
+    	String toPlay = trackFiles[0].getAbsolutePath();
+        String nextPlay = trackFiles[1].getAbsolutePath();
+    	
         for(File f : trackFiles) {
         	
         	Log.v("TEST", "Track name: "+f.getName());
@@ -43,9 +44,7 @@ public class MainActivity extends Activity {
         	
         	URL echonestSearch;
         	String jsonString = "";
-        	
-        	toPlay = f.getAbsolutePath();
-        	
+        	        	
         	try {
 				echonestSearch = new URL("http://developer.echonest.com/api/v4/song/search?api_key=" +
 						"M3ATLVAJVEGQGRJWN&format=json&artist=" +
@@ -71,7 +70,8 @@ public class MainActivity extends Activity {
         }
         
         Intent intent = new Intent(this, PlayerActivity.class);
-        intent.putExtra("toplay", toPlay);
+        intent.putExtra("firsttoplay", toPlay);
+        intent.putExtra("secondtoplay", nextPlay);
         startActivity(intent);
         
     }
