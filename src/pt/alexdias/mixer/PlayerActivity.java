@@ -41,6 +41,12 @@ public class PlayerActivity extends Activity {
 	
 	private boolean loaded = false;
 	
+	AudioTrack mAudioTrack = null;
+	AudioTrack mAudioTrack2 = null;
+
+	byte[] buffer;
+	byte[] buffer2;
+	
 	@Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,14 +58,32 @@ public class PlayerActivity extends Activity {
         
         setContentView(R.layout.activity_player);
 
-		AudioTrack mAudioTrack = null;
-        
+		
         try {
-			byte[] buffer = decode(firstToPlayPath, 0, 10000);
+			buffer = decode(firstToPlayPath, 0, 10000);
+			buffer2 = decode(nextToPlayPath, 0, 10000);
+			
 			int min = AudioTrack.getMinBufferSize(44100, AudioFormat.CHANNEL_OUT_STEREO, AudioFormat.ENCODING_PCM_16BIT);
+			int min2 = AudioTrack.getMinBufferSize(44100, AudioFormat.CHANNEL_OUT_STEREO, AudioFormat.ENCODING_PCM_16BIT);
+			
 			mAudioTrack = new AudioTrack(AudioManager.STREAM_MUSIC, 44100, AudioFormat.CHANNEL_OUT_STEREO, AudioFormat.ENCODING_PCM_16BIT, min, AudioTrack.MODE_STREAM);
-			mAudioTrack.play();
-	    	mAudioTrack.write(buffer, 0, buffer.length);
+			mAudioTrack2 = new AudioTrack(AudioManager.STREAM_MUSIC, 44100, AudioFormat.CHANNEL_OUT_STEREO, AudioFormat.ENCODING_PCM_16BIT, min2, AudioTrack.MODE_STREAM);
+			
+			new Thread(new Runnable() {
+			    public void run() {
+			    	mAudioTrack.play();
+					mAudioTrack.write(buffer, 0, buffer.length);	
+			    }
+			  }).start();
+			
+			
+			new Thread(new Runnable() {
+			    public void run() {
+					mAudioTrack2.play();
+			    	mAudioTrack2.write(buffer2, 0, buffer2.length);
+			    }
+			  }).start();
+			
 			
 		} catch (Exception e) {
 			e.printStackTrace();
