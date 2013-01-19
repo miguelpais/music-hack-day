@@ -26,7 +26,6 @@ public class MainActivity extends Activity {
         // iterate through files in the folder and set the MediaMetadataRetriever source to each of them
         
         File[] trackFiles = new File("/sdcard/mixer").listFiles();
-        String test = "";
         
         for(File f : trackFiles) {
         	
