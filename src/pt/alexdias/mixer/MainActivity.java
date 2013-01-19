@@ -11,6 +11,7 @@ import java.util.concurrent.ExecutionException;
 import android.media.MediaMetadataRetriever;
 import android.os.Bundle;
 import android.app.Activity;
+import android.content.Intent;
 import android.util.Log;
 import android.view.Menu;
 
@@ -26,7 +27,8 @@ public class MainActivity extends Activity {
         // iterate through files in the folder and set the MediaMetadataRetriever source to each of them
         
         File[] trackFiles = new File("/sdcard/mixer").listFiles();
-        String test = "";
+        
+    	String toPlay = "";
         
         for(File f : trackFiles) {
         	
@@ -42,7 +44,7 @@ public class MainActivity extends Activity {
         	URL echonestSearch;
         	String jsonString = "";
         	
-        	
+        	toPlay = f.getAbsolutePath();
         	
         	try {
 				echonestSearch = new URL("http://developer.echonest.com/api/v4/song/search?api_key=" +
@@ -68,6 +70,9 @@ public class MainActivity extends Activity {
         	
         }
         
+        Intent intent = new Intent(this, PlayerActivity.class);
+        intent.putExtra("toplay", toPlay);
+        startActivity(intent);
         
     }
 

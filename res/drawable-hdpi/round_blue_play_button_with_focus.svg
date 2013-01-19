@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generator: Adobe Illustrator 12.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 51448)  -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   height="137.112"
+   id="Layer_1"
+   inkscape:version="0.48.2 r9819"
+   sodipodi:docname="round_blue_play_button_with_focus.svg"
+   sodipodi:version="0.32"
+   space="preserve"
+   style="overflow:visible;enable-background:new 0 0 137.152 137.112;"
+   version="1.1"
+   viewBox="0 0 137.152 137.112"
+   width="137.152"
+   inkscape:export-filename="D:\GR8DAN\My Pictures\Graphics\Buttons\large_round_blue_play_button_with_focus.png"
+   inkscape:export-xdpi="39.369999"
+   inkscape:export-ydpi="39.369999">
+  <metadata
+     id="metadata3001">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:title></dc:title>
+        <dc:description />
+        <dc:subject>
+          <rdf:Bag>
+            <rdf:li>button</rdf:li>
+          </rdf:Bag>
+        </dc:subject>
+        <dc:publisher>
+          <cc:Agent
+             rdf:about="http://www.openclipart.org/">
+            <dc:title>Open Clip Art Library</dc:title>
+          </cc:Agent>
+        </dc:publisher>
+        <dc:creator>
+          <cc:Agent>
+            <dc:title>Architetto Francesco Rollandin</dc:title>
+          </cc:Agent>
+        </dc:creator>
+        <dc:rights>
+          <cc:Agent>
+            <dc:title>Architetto Francesco Rollandin</dc:title>
+          </cc:Agent>
+        </dc:rights>
+        <dc:date />
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <cc:license
+           rdf:resource="http://web.resource.org/cc/PublicDomain" />
+        <dc:language>en</dc:language>
+      </cc:Work>
+      <cc:License
+         rdf:about="http://web.resource.org/cc/PublicDomain">
+        <cc:permits
+           rdf:resource="http://web.resource.org/cc/Reproduction" />
+        <cc:permits
+           rdf:resource="http://web.resource.org/cc/Distribution" />
+        <cc:permits
+           rdf:resource="http://web.resource.org/cc/DerivativeWorks" />
+      </cc:License>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs23" />
+  <sodipodi:namedview
+     bordercolor="#666666"
+     borderopacity="1.0"
+     id="base"
+     inkscape:current-layer="g3"
+     inkscape:cx="9.160797"
+     inkscape:cy="68.556"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:window-height="718"
+     inkscape:window-width="1283"
+     inkscape:window-x="88"
+     inkscape:window-y="116"
+     inkscape:zoom="2.6255908"
+     pagecolor="#ffffff"
+     showgrid="false"
+     inkscape:window-maximized="0" />
+  <g
+     id="g3"
+     transform="matrix(-1,0,0,1,137.15192,0)">
+    <path
+       d="m 0,68.534 c 0,34.94 27.408,65.096 62.231,68.297 34.835,3.203 67.432,-21.293 73.804,-55.743 C 142.406,46.647 120.91,11.951 87.154,2.485 53.388,-6.983 16.901,11.401 4.449,44.178 1.5,51.941 0,60.23 0,68.534"
+       id="path5"
+       style="fill:#ff6600"
+       inkscape:connector-curvature="0" />
+    <radialGradient
+       cx="68.590797"
+       cy="68.5327"
+       gradientUnits="userSpaceOnUse"
+       id="XMLID_2_"
+       r="63.7393">
+      <stop
+         id="stop8"
+         offset="0"
+         style="stop-color:#D4E4F7" />
+      <stop
+         id="stop10"
+         offset="1"
+         style="stop-color:#7FB5F7" />
+    </radialGradient>
+    <path
+       d="m 4.852,68.534 c 0,34.735 29.003,63.738 63.739,63.738 34.736,0 63.739,-29.003 63.739,-63.738 0,-34.737 -29.003,-63.74 -63.739,-63.74 C 33.855,4.793 4.852,33.797 4.852,68.534"
+       id="path12"
+       style="fill:url(#XMLID_2_)"
+       inkscape:connector-curvature="0" />
+    <path
+       d="m 10.998,43.758 c -5.15,30.017 12.779,60.171 41.609,69.994 30.578,10.419 64.985,-4.98 77.773,-34.598 -6.145,35.844 -43,59.406 -78.116,49.93 C 16.007,119.299 -3.945,78.33 10.998,43.758"
+       id="path14"
+       style="fill:#68a0f2"
+       inkscape:connector-curvature="0" />
+    <path
+       d="m 28.78,40.238 c 8.816,1.823 18.965,-10.664 26.607,-13.841 14.279,-5.936 32.116,-3.18 45.053,4.903 13.684,8.549 23.416,24.971 24.913,41.092 0.005,0.046 0.005,0.055 0.001,0.024 -1.01,-9.762 -0.328,-18.938 -4.046,-28.375 C 115.149,28.4 101.829,16.153 85.769,11.232 69.163,6.146 51.004,9.382 36.699,19.077 32.282,22.073 15.279,37.443 28.78,40.238"
+       id="path16"
+       style="fill:#b3e7fc"
+       inkscape:connector-curvature="0" />
+    <path
+       d="m 84.338,37.689 c 0,17.728 0,35.454 0,53.182 0,5.415 2.223,15.479 -5.697,15.859 -6.665,0.323 -14.2,-8.519 -18.897,-12.226 C 51.963,88.368 44.182,82.233 36.4,76.095 28.902,70.182 34.457,65.792 40.005,61.399 48.364,54.781 56.724,48.16 65.083,41.541 c 2.691,-2.131 5.381,-4.262 8.072,-6.392 2.706,-2.144 11.183,-2.482 11.183,2.54"
+       id="path18"
+       style="fill:#ffffff"
+       inkscape:connector-curvature="0" />
+    <path
+       d="M 72.999,34.119 C 60.151,44.292 47.305,54.464 34.458,64.637 c -7.945,6.292 0.956,11.834 5.87,15.706 8.696,6.859 17.394,13.72 26.09,20.578 2.133,1.68 4.265,3.361 6.397,5.044 3.913,3.087 12.427,2.059 12.427,-4.063 0,-7.205 0,-14.411 0,-21.616 0,-10.845 0,-21.69 0,-32.535 0,-3.113 0,-6.226 0,-9.339 0,-5.661 -8.33,-7.393 -12.243,-4.293 m 1.122,70.573 C 61.403,94.662 48.684,84.632 35.968,74.604 29.2,69.264 37.196,64.777 41.45,61.408 49.837,54.767 58.225,48.124 66.615,41.482 c 2.367,-1.875 4.734,-3.751 7.102,-5.625 2.272,-1.8 9.718,-2.276 9.718,2.018 0,7.205 0,14.411 0,21.616 0,10.459 0,20.92 0,31.38 0,3.207 0,6.416 0,9.625 -0.001,4.661 -5.302,7.379 -9.314,4.196"
+       id="path20"
+       style="fill:#5471af"
+       inkscape:connector-curvature="0" />
+  </g>
+</svg>
