@@ -83,6 +83,7 @@ public class PlayerActivity extends Activity {
 			    	Looper.prepare();
 						    
 			    	float currentVolume = 1.0f;
+			    	mAudioTrack.setStereoVolume(currentVolume, currentVolume);
 			    	
 			    	mAudioTrack.play();
 					
@@ -93,12 +94,37 @@ public class PlayerActivity extends Activity {
 			    	Log.v("INFO","Max vol: "+mAudioTrack.getMaxVolume());
 			    	Log.v("INFO","Min vol: "+mAudioTrack.getMinVolume());
 			    	
+			    	boolean playing = false;
+			    	
 			    	for(int i = 0; i < buffer.length; i=i+50) {
 			    		mAudioTrack.write(buffer, i, 50);
+			    		if(i > 50 && !playing) {
+			    			//Log.v("INFO","Playing thread 2!");
+			    			new Thread(new Runnable() {
+			    			    public void run() {
+			    					
+			    			    	mAudioTrack2.setStereoVolume(0, 0);
+			    			    	float currentVolume = 0f;
+			    			    	
+			    			    	mAudioTrack2.play();
+			    					
+			    					for(int i = 0; i < buffer2.length; i=i+50) {
+			    						currentVolume += 0.000005f;
+			    						mAudioTrack2.setStereoVolume(currentVolume, currentVolume);
+			    			    		mAudioTrack2.write(buffer2, i, 50);
+			    			    	}
+			    					
+//			    					Log.v("TEST","This is a test thread 2!");
+			    					
+			    			    }
+			    			  }).start();
+			    			
+			    			playing = true;
+			    		}
 			    		if(i > 50 && currentVolume > 0) { // Length of this particular song divided in half
 			    			currentVolume -= 0.00005f;
 			    			mAudioTrack.setStereoVolume(currentVolume, currentVolume);
-			    			Log.v("INFO","Set vol to: "+currentVolume);
+			    			//Log.v("INFO","Set vol to: "+currentVolume);
 			    		}
 			    		//Log.v("INFO","Playing!");
 			    		
@@ -109,18 +135,18 @@ public class PlayerActivity extends Activity {
 			    }
 			  }).start();
 			
-			new Thread(new Runnable() {
-			    public void run() {
-					mAudioTrack2.play();
-					
-					for(int i = 0; i < buffer2.length; i=i+50) {
-			    		mAudioTrack2.write(buffer2, i, 50);
-			    	}
-					
-					Log.v("TEST","This is a test thread 2!");
-					
-			    }
-			  }).start();
+//			new Thread(new Runnable() {
+//			    public void run() {
+//					mAudioTrack2.play();
+//					
+//					for(int i = 0; i < buffer2.length; i=i+50) {
+//			    		mAudioTrack2.write(buffer2, i, 50);
+//			    	}
+//					
+//					Log.v("TEST","This is a test thread 2!");
+//					
+//			    }
+//			  }).start();
 			
 			
 		} catch (Exception e) {
